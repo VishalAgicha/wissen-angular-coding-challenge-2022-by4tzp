@@ -1,17 +1,15 @@
 .heading {
   padding-left: 30px;
 }
-form {
-  width: 500px;
-}
 
 .error-label {
   color: red;
 }
 
 .input-field {
-  width: 60%;
+  width: 78%;
   height: 40px;
+  border-radius: 8px;
 }
 
 .field {
@@ -29,7 +27,25 @@ svg {
 
 .btn-next {
   display: block;
-  width: 60%;
+  width: 78%;
   height: 40px;
-  background-color: blueviolet;
+  background-color: rgb(25, 45, 161);
+  color: white;
+  border-radius: 8px;
+}
+
+@media only screen and (min-width: 500px) {
+  .input-field {
+    width: 300px;
+    height: 40px;
+    border-radius: 8px;
+  }
+  .btn-next {
+    display: block;
+    width: 300px;
+    height: 40px;
+    background-color: rgb(25, 45, 161);
+    color: white;
+    border-radius: 8px;
+  }
 }

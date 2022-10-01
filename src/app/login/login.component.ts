@@ -33,28 +33,24 @@ export class LoginComponent implements OnInit {
   ngOnDestroy() {}
 
   onSubmit() {
-    if (this.loginForm.value.password == 'cityslicka') {
-      this.authenticationService
-        .login(this.loginForm.value.email, this.loginForm.value.password)
-        .subscribe(
-          (data) => {
-            this.token = data;
-            localStorage.setItem(
-              'currentUser',
-              JSON.stringify({
-                token: this.token,
-                username: this.loginForm.value.email,
-              })
-            );
-            this.router.navigate(['welcome', this.loginForm.value.email]);
-          },
-          (err) => {
-            alert('Invalid user');
-          }
-        );
-    } else {
-      alert('Invalid password');
-    }
+    this.authenticationService
+      .login(this.loginForm.value.email, this.loginForm.value.password)
+      .subscribe(
+        (data) => {
+          this.token = data;
+          localStorage.setItem(
+            'currentUser',
+            JSON.stringify({
+              token: this.token,
+              username: this.loginForm.value.email,
+            })
+          );
+          this.router.navigate(['welcome', this.loginForm.value.email]);
+        },
+        (err) => {
+          alert('Invalid user');
+        }
+      );
   }
   // implement the username validator. Min 6 characters and no digits, special chars
   usernameValidator() {

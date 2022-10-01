@@ -25,7 +25,8 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit() {
     this.user.username = this.route.snapshot.paramMap.get('username');
-    this.setToken();
+    this.user.token = JSON.parse(localStorage.getItem('currentUser')).token;
+    this.getUserInfo();
   }
 
   ngOnDestroy() {}
@@ -35,11 +36,9 @@ export class WelcomeComponent implements OnInit {
     localStorage.removeItem('currentUser');
     this.router.navigate(['']);
   }
-  setToken() {
-    this.user.token = JSON.parse(localStorage.getItem('currentUser')).token;
-  }
 
   getUserInfo() {
+    this.userDetails = new Array();
     this.authenticationService
       .getUserList(this.user.token)
       .subscribe((data) => {
