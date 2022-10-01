@@ -1,0 +1,35 @@
+.heading {
+  padding-left: 30px;
+}
+form {
+  width: 500px;
+}
+
+.error-label {
+  color: red;
+}
+
+.input-field {
+  width: 60%;
+  height: 40px;
+}
+
+.field {
+  display: block;
+}
+.input-check {
+  float: left;
+  margin: 3px 5px 21px 3px;
+}
+
+svg {
+  width: 16px;
+  margin-left: -30px;
+}
+
+.btn-next {
+  display: block;
+  width: 60%;
+  height: 40px;
+  background-color: blueviolet;
+}
